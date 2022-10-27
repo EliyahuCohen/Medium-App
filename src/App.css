@@ -1,38 +1,144 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+img {
+  transition: 0.3s;
+}
 .App {
-  text-align: center;
+  max-width: 1700px;
+  margin: 0 auto;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+a {
+  text-decoration: none;
+  color: black;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.navbar {
   display: flex;
-  flex-direction: column;
   align-items: center;
+  justify-content: space-between;
+}
+.navbar > div:first-child img {
+  width: 150px;
+  cursor: pointer;
+  padding: 1rem;
+}
+.navbar-left {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+}
+.navbar-left a {
+  margin: 1rem;
+  font-weight: 400;
+}
+.navbar-left a.special-link {
+  color: #fff;
+  background: #facc15;
+  border-radius: 100vh;
+  padding: 4px 10px;
+}
+.navbar-right {
+  padding: 0;
+  padding-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* Banner section */
+
+.banner {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 3rem 2rem;
+  background: #facc15;
+}
+.banner img {
+  width: 50%;
+}
+.banner .main-text {
+  font-weight: 500;
+  font-size: 3.5em;
+}
+.banner .left p {
+  font-size: 16px;
+}
+.banner .main-text span {
+  text-decoration: underline;
+}
+@media screen and (max-width: 750px) {
+  .banner {
+    text-align: center;
+    flex-direction: column;
+  }
+  .navbar-right {
+    display: none;
+  }
+}
+
+/* posts section */
+
+.heading-posts {
+  text-align: center;
+  margin: 2rem 0;
+  text-decoration: underline;
+}
+.posts-container {
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  grid-gap: 30px;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 4rem;
+  padding-top: 1rem;
+}
+.main-context-text {
+  font-size: 19px;
+}
+@media screen and (min-width: 1500px) {
+  .main-content {
+    padding: 0 7rem;
+  }
+  .posts-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 800px) {
+  .main-content {
+    padding: 0 4rem;
+  }
+  .main-context-text {
+    font-size: 17px;
+  }
+}
+@media screen and (max-width: 750px) {
+  .main-content {
+    padding: 0 1rem;
+  }
+}
+.logout-btn {
+  margin-right: 10px;
+  border: 1px solid #facc15;
+  padding: 5px 10px;
+  border-radius: 10px;
+  font-weight: 500;
+  transition: 0.3s;
+  color: #facc15;
+}
+.logout-btn:hover {
+  background-color: #facc15;
   color: white;
+  transition: 0.3s;
 }
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.comments-section {
+  max-width: 750px;
+  margin: 0 auto;
 }
